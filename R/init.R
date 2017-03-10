@@ -21,7 +21,7 @@
 #' @param dayVPD num. normalized daily T course (from 7am to 7 pm, with a half-hour time step)
 #' @param klight num. light attenuation in the canopy Beer-Lambert
 #' @param phi num. quantum yield (in micromol C/micromol photon)
-#' @param g1 num. parameter g1 of Medlyn et al ’s stomatal conductance model 
+#' @param g1 num. parameter g1 of Medlyn et al stomatal conductance model 
 #' @param vC num. variance of the flexion moment
 #' @param DBH0 num. initial dbh (m)
 #' @param H0 num. initial height (m)
@@ -56,6 +56,7 @@
 #' @export
 #'
 #' @examples
+#' NA
 #'
 init <- function(
   # file
@@ -103,7 +104,8 @@ init <- function(
   m1 = 0.035,
   CO2 = 360,
   # species data
-  species = read.table(getOption("RconTroll.species"), header=TRUE, dec=".", sep=""),
+  species = read.table(getOption("RconTroll.species"), 
+                       header=TRUE, dec=".", sep=""),
   # climate data
   Tyear = c(24.64982014,	24.60624211,	24.49933474,	24.96279395,	24.88365139,
             24.87594184,	24.98313802,	25.68910135,	26.58033805,	26.98619405,
@@ -167,7 +169,7 @@ init <- function(
     '###	Characters shared by species											',
     paste(klight,	'/* klight # light attenuation in the canopy Beer-Lambert */', sep = '\t'),
     paste(phi,	'/* phi # quantum yield (in micromol C/micromol photon) */', sep = '\t'),
-    paste(g1,	'/* parameter g1 of Medlyn et al ’s stomatal conductance model */', sep = '\t'),
+    paste(g1,	'/* parameter g1 of Medlyn et al stomatal conductance model */', sep = '\t'),
     paste(vC,	'/* vC  # variance of the flexion moment */', sep = '\t'),
     paste(DBH0,	'/* DBH0 # initial dbh (m) */', sep = '\t'),
     paste(H0,	'/* H0 # initial height (m) */', sep = '\t'),
